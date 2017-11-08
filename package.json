@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "gulp default",
     "start": "node index.js"
   },
   "keywords": [],
@@ -11,5 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "gulp-clean": "^0.3.2",
+    "gulp-flatten": "^0.3.1",
+    "gulp-sequence": "^0.4.6",
+    "webpack": "^3.8.1"
   }
 }

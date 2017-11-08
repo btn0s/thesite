@@ -1,10 +1,14 @@
 var express = require('express')
 var app = express()
 
-app.get('/', function (req, res) {
-  res.send('Hello Digital Ocean!')
+const PORT = 8080;
+
+app.use(express.static(__dirname + '/app/build'));
+
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/app/build/index.html');
 })
 
-app.listen(8080, function () {
-  console.log('Magic is happening on port 3000!')
+app.listen(PORT, function () {
+  console.log('Magic is happening on port' + PORT + '!')
 })
