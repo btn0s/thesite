@@ -3,6 +3,7 @@ var flatten = require('gulp-flatten');
 var clean = require('gulp-clean');
 var sequence = require('gulp-sequence');
 var sass = require('gulp-sass');
+var panini = require('panini');
 
 gulp.task('clean', function (done) {
   return gulp.src('./app/build/')
@@ -11,9 +12,12 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('html', function (done) {
-  gulp.src('./app/src/**/*.html')
-  .pipe(flatten())
-  .pipe(gulp.dest('./app/build/'));
+  gulp.src('./app/src/pages/**/*.html')
+    .pipe(panini({
+      root: './app/src/pages/',
+      layouts: './app/src/layouts/'
+    }))
+    .pipe(gulp.dest('./app/build'));
   done();
 });
 
@@ -32,6 +36,7 @@ gulp.task('scss', function(done){
 });
 
 gulp.task('watch', function(){
+  gulp.watch('./app/src/{layouts,partials,helpers,data}/**/*').on('all', gulp.series(panini.refresh));
   gulp.watch('./app/src/**/*.html').on('all', gulp.series('html'));
   gulp.watch('./app/src/**/*.scss').on('all', gulp.series('scss'));
   gulp.watch('./app/src/**/*.js').on('all', gulp.series('js'));

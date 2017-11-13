@@ -1,4 +1,26 @@
 .app {
   height: 100px;
   background: red;
+  color: white;
+  position: relative;
+
+  h1, a, .button {
+    position: absolute;
+  }
+
+  h1 {
+    font-size: 100px;
+    color: white;
+
+    &:hover {
+      transition: all 500ms ease;
+      animation: pulse 500ms;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(2);}
+  100% {transform: scale(1);}
 }
