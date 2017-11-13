@@ -1,7 +1,7 @@
-$('.button').on('click', function () {
+function randHex () {
   let randHex = '#'+Math.floor(Math.random()*16777215).toString(16);
-  $('.app').css('background',randHex);
-});
+  return randHex;
+}
 
 function calcRandX() {
   var bodyWidth = document.body.clientWidth;
@@ -29,6 +29,12 @@ function posLink() {
   $('a').css('left', calcRandX());
   $('a').css('top', calcRandY());
 };
+
+$('.button').on('click', function () {
+  $('.app').css('background','url("../img/kaboom.png")');
+});
+
+$('h1').css('color',randHex());
 
 posLink();
 posButton();
