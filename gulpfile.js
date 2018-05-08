@@ -76,5 +76,5 @@ gulp.task('watch', function () {
     gulp.watch('app/src/assets/video/**/*', {cwd: './'}, gulp.series('cleanVid', video));
 });
 
-gulp.task('build', gulp.parallel(html, js, scss, img, video));
+gulp.task('build', gulp.parallel(html, js, scss));
 gulp.task('default', gulp.series('clean', 'build', 'watch'));

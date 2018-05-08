@@ -1,5 +1,5 @@
 .app {
-  background: url('../img/HI.gif');
+  background: url('../../src/assets/img/HI.gif');
   color: white;
   position: relative;
   padding: 0;
@@ -22,9 +22,20 @@
 }
 
 .page#op {
-  color: #000
+  color: #000;
 }
 
+#motel {
+  color: #000;
+}
+
+#hermetics {
+  color: #000;
+}
+
+#help {
+  color: #000;
+}
 
 
 #twitterembed {
@@ -41,6 +52,7 @@
 
 
 #jj {color: #000}
+#hpp {color: #000}
 
 #velo {color: #000}
 
@@ -52,21 +64,27 @@
 }
 
 .page#inferno {
-  background: #000 url("../img/inferno.gif");
+  background: #000 url("../../src/assets/img/inferno.gif");
   background-position: 500px 150px;
   background-repeat: no-repeat;
 }
 
 .page#hospital {
-  background: #fff url("../img/Cross.gif");
+  background: #fff url("../../src/assets/img/Cross.gif");
   background-position: 420px 10px;
   background-repeat: no-repeat;
   background-size: 40%
 }
 
 .page#whirlpool {
-  background: #000 url("../img/humanity.gif");
+  background: #000 url("../../src/assets/img/humanity.gif");
   background-position: 420px 150px;
+  background-repeat: no-repeat;
+}
+
+.page#claire {
+  background: #000 url(https://i.gyazo.com/e9a2d13daa9fd717043e28da55ef026f.png);
+  background-position: 300px 150px;
   background-repeat: no-repeat;
 }
 
@@ -77,7 +95,13 @@
 }
 
 .page#grooming {
-  background: #fff url("../img/upmysleeves.gif");
+  background: #fff url("../../src/assets/img/upmysleeves.gif");
+  background-position: 300px 150px;
+  background-repeat: no-repeat;
+}
+
+.page#hermetics1 {
+  background: #000 url(https://i.gyazo.com/e9a2d13daa9fd717043e28da55ef026f.png);
   background-position: 300px 150px;
   background-repeat: no-repeat;
 }
