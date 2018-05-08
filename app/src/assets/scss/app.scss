@@ -1,11 +1,13 @@
 .app {
-  background: url('../img/retard.gif');
+  background: url('../img/HI.gif');
   color: white;
   position: relative;
-  width: 100%;
+  padding: 0;
+  margin: 0;
 
-  h1, a, .button {
-    position: absolute;
+  .randPos {
+
+      position: absolute;
   }
 
   h1 {
@@ -18,6 +20,90 @@
     }
   }
 }
+
+.page#op {
+  color: #000
+}
+
+
+
+#twitterembed {
+  position: absolute;
+  top: 35px;
+  right: 400px;
+}
+#twitterembed1 {
+  position: absolute;
+  top: 60px;
+  right: 400px;
+}
+
+
+
+#jj {color: #000}
+
+#velo {color: #000}
+
+#id1 {color: #fff}
+.page#time1 {
+  background: #000 url(https://i.gyazo.com/e9a2d13daa9fd717043e28da55ef026f.png);
+  background-position: 300px 150px;
+  background-repeat: no-repeat;
+}
+
+.page#inferno {
+  background: #000 url("../img/inferno.gif");
+  background-position: 500px 150px;
+  background-repeat: no-repeat;
+}
+
+.page#hospital {
+  background: #fff url("../img/Cross.gif");
+  background-position: 420px 10px;
+  background-repeat: no-repeat;
+  background-size: 40%
+}
+
+.page#whirlpool {
+  background: #000 url("../img/humanity.gif");
+  background-position: 420px 150px;
+  background-repeat: no-repeat;
+}
+
+.page#catdreams {
+  background: #000 url(https://i.gyazo.com/e9a2d13daa9fd717043e28da55ef026f.png);
+  background-position: 300px 150px;
+  background-repeat: no-repeat;
+}
+
+.page#grooming {
+  background: #fff url("../img/upmysleeves.gif");
+  background-position: 300px 150px;
+  background-repeat: no-repeat;
+}
+
+#anlink {
+  color: #000
+}
+
+
+
+.page::after {
+  content: "";
+  display: table;
+  clear: both;
+  width: 100%;
+  height: 100%;
+}
+
+.page::after {
+  content: "";
+  display: table;
+  clear: both;
+  width: 100%;
+  height: 100%;
+}
+
 
 @keyframes pulse {
   0% {transform: scale(1);}

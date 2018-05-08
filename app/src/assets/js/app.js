@@ -1,41 +1,52 @@
-function randHex () {
-  let randHex = '#'+Math.floor(Math.random()*16777215).toString(16);
-  return randHex;
-}
-
-function calcRandX() {
-  var bodyWidth = document.body.clientWidth;
-  var randPosX = Math.floor((Math.random()*bodyWidth));
-  return randPosX;
-}
-
-function calcRandY() {
-  var bodyHeight = document.body.clientHeight;
-  var randPosY = Math.floor((Math.random()*bodyHeight));
-  return randPosY;
-}
-
-function posTitle() {
-  $('h1').css('left', calcRandX());
-  $('h1').css('top', calcRandY());
+const compose = (f, g) => {
+    return (x) => {
+        return f(g(x));
+    };
 };
 
-function posButton() {
-  $('.button').css('left', calcRandX());
-  $('.button').css('top', calcRandY());
+const getRand = (v) => {
+    return Math.floor(Math.random() * v)
 };
 
-function posLink() {
-  $('a').css('left', calcRandX());
-  $('a').css('top', calcRandY());
+const randHex = () => {
+    return '#' + getRand(16777215).toString(16)
 };
+
+const getColor = (a) => {
+    return a[getRand(a.length)];
+};
+
+const setPosX = (x) => {
+    return $(x).each( (i,v) => {
+        $(v).css('left', getRand(document.body.clientWidth));
+    });
+};
+
+const setPosY = (x) => {
+    return $(x).each( (i,v) => {
+        $(v).css('top', getRand(document.body.clientHeight));
+    });
+};
+
+const posRand = compose(setPosX, setPosY);
+
+posRand('.randPos');
+
 
 $('.button').on('click', function () {
-  $('.app').css('background','url("../img/kaboom.png")');
+    const folder = "../img/";
+    $.ajax({
+        url: folder,
+        success: (data) => {
+            $(data).find("a").attr("href", (i, val) => {
+                if (val.match(/\.(jpe?g|png|gif)$/)) {
+                    $("body").append("<img src='" + folder + val + "'>");
+                }
+            });
+        }
+    });
 });
 
-$('h1').css('color',randHex());
+const colors = ['rgba(221, 68, 221, 0.533)', '#43FFEE', '#43FF85', '#FCFF43', '#43ACFF', '#9643FF', '#43FFAC', '#FFA743', '#C643FF', '#1300B6', '#B60000', '#B600A8', '#B6007F'];
 
-posLink();
-posButton();
-posTitle();
+$('h1').css('color', getColor(colors));

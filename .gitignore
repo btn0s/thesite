@@ -1,3 +1,13 @@
 node_modules/
 app/build/
 app/src/assets/img/
+*.jpg
+*.png
+*.mp3
+*.mp4
+*.flv
+*.jpg
+*.jpeg
+*.png
+*.gif
+app/src/assets/video/
